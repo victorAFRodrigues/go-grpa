@@ -1,0 +1,36 @@
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output directories
+bin/
+_build/
+
+# Dependency directory (optional - remove if you vendor dependencies)
+vendor/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# Local environment and config files
+.env
+.config.json
+
+# Logs and local database files
+/internal/data/database.db
+/logs/
+
+# IDE and editor folders
+.vscode/
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
