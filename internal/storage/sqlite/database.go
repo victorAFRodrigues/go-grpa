@@ -1,14 +1,27 @@
-package storage
+package sqlite
 
 import (
-	"fmt"
+	"log"
+	"os"
+	"path/filepath"
+
 	"github.com/jmoiron/sqlx"
 )
 
-func StartDatabase(db *sqlx.DB) *sqlx.DB {
-	database := db.Connect()
+func StartDatabase() *sqlx.DB {
+	dir := "./data"
+	if err := os.MkdirAll(dir, os.ModePerm); err != nil {
+		log.Fatalf("Erro ao criar pasta do banco: %v", err)
+	}
 
-	fmt.Println("Banco de dados inicializado e atualizado com sucesso!")
+	dbPath := filepath.Join(dir, "database.db")
 
-	return database
+	db, err := sqlx.Connect("sqlite", dbPath)
+	if err != nil {
+		log.Fatalf("Erro ao abrir o banco SQLite: %v", err)
+	}
+
+	runMigrations(db)
+
+	return db
 }

@@ -1,5 +1,6 @@
-```plaintext
+ideia de arquitetura:
 
+```plaintext
 grpa-core-go/
 ├── cmd/
 │   └── grpa/
