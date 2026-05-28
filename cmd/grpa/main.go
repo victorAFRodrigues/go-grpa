@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	db := sqlite.StartDatabase()
+	db := sqlite.ConnectDatabase()
 	defer db.Close()
 
 	var taskRepo interfaces.IRepository[entities.Task]

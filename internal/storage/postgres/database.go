@@ -1,4 +1,4 @@
-package sqlite
+package postgres
 
 import (
 	"log"
@@ -8,7 +8,7 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
-func ConnectDatabase() *sqlx.DB {
+func StartDatabase() *sqlx.DB {
 	dir := "./data"
 	if err := os.MkdirAll(dir, os.ModePerm); err != nil {
 		log.Fatalf("Erro ao criar pasta do banco: %v", err)
