@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"log"
 
-	"gitlab.com/victorAFRodrigues/grpa/internal/storage/entities"
-	"gitlab.com/victorAFRodrigues/grpa/internal/storage/interfaces"
-	"gitlab.com/victorAFRodrigues/grpa/internal/storage/sqlite"
+	"gitlab.com/victorAFRodrigues/grpa/internal/domain/entities"
+	"gitlab.com/victorAFRodrigues/grpa/internal/domain/interfaces"
+	"gitlab.com/victorAFRodrigues/grpa/internal/infrastructure/sqlite"
 )
 
 func main() {
